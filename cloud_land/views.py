@@ -12,7 +12,7 @@ class cloud_land(View):
   #所以这里使用@csrf_exempt是单独为这个函数去掉这个防护功能。
   @csrf_exempt
   def dispatch(self, *args, **kwargs):
-    return super(WeChat, self).dispatch(*args, **kwargs)
+    return super(cloud_land, self).dispatch(*args, **kwargs)
     
   def get(self, request):
   
@@ -23,7 +23,7 @@ class cloud_land(View):
     echostr = request.GET.get('echostr', None)
     
     #这个token是我们自己来定义的，并且这个要填写在开发文档中的Token的位置
-    token = '这里的token需要自己设定，主要是和微信的服务器完成验证使用'
+    token = 'autotest330'
     
     #把token，timestamp, nonce放在一个序列中，并且按字符排序
     hashlist = [token, timestamp, nonce]
